@@ -95,6 +95,7 @@ h4 {
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
   width: 100%;
+  font-family: var(--font-sohne);
 }
 
 /* Button variants */
@@ -133,4 +134,35 @@ h4 {
 
 .btn-ghost:hover {
   border-color: var(--btn-bg-hover-ghost);
+}
+
+/* Lottie variants */
+.lottie-wrapper,
+.lottie-wrapper-md,
+.lottie-wrapper-sm {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0;
+}
+
+.lottie-wrapper .lf-player-container {
+  max-width: 274px;
+}
+
+.lottie-wrapper-md .lf-player-container {
+  max-width: 146px;
+}
+
+.lottie-wrapper-sm .lf-player-container {
+  max-width: 29px;
+}
+
+.action-container {
+  padding: 24px 0;
+}
+
+@media screen and (min-width: 390px) {
+  .action-container {
+    max-width: 350px;
+  }
 }
