@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 import styles from "@/styles/result.module.css";
 
-const page = () => {
+const Result = () => {
   const { user } = useGlobalContext();
   const router = useRouter();
   return (
@@ -26,4 +26,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Result;

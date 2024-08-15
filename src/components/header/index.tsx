@@ -6,7 +6,7 @@ import { Refresh, Previous } from "@/icons";
 import styles from "@/styles/header.module.css";
 import Link from "next/link";
 
-const index = () => {
+const Header = () => {
   const pathname = usePathname();
   const router = useRouter();
   return (
@@ -28,4 +28,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Header;
