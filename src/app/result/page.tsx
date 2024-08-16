@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { useGlobalContext } from "@/contexts/GlobalContext";
+
 import LottieAnimation from "@/components/shared/lottie-animation";
 import Button from "@/components/ui/button";
-import { useRouter } from "next/navigation";
 
 const Result = () => {
   const { user } = useGlobalContext();
