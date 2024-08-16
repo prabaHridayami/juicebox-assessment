@@ -1,12 +1,10 @@
 import React, { ReactElement } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { Pagination } from "swiper/modules";
-import LottieAnimation from "@/components/shared/lottie-animation";
-import Button from "@/components/ui/button";
 
-import styles from "@/styles/realitycheck.module.css";
+import Button from "@/components/ui/button";
+import LottieAnimation from "@/components/shared/lottie-animation";
 
 type Props = {
   onChangeSlide: (swiper: any) => void;
@@ -26,7 +24,7 @@ const tutorials: TutorialProps[] = [
     desc: (
       <>
         Professionals around the world shared how they feel abo
-        <span className={styles.muted}>
+        <span className="muted">
           ut technology and I&apos;ve listened. Now it&apos;s your turn.
         </span>
       </>
@@ -37,7 +35,7 @@ const tutorials: TutorialProps[] = [
     desc: (
       <>
         I&apos;ll ask you a handful of meaningful questions&nbsp;
-        <span className={styles.muted}>
+        <span className="muted">
           and compare your responses with people in your industry.
         </span>
       </>
@@ -48,7 +46,7 @@ const tutorials: TutorialProps[] = [
     desc: (
       <>
         You&apos;ll get insights into current industry sentiments an
-        <span className={styles.muted}>
+        <span className="muted">
           d a reality check about technology in a few minutes. Deal? Great!
         </span>
       </>
@@ -67,9 +65,9 @@ const Walkthrough = (props: Props) => {
         onSlideChange={onChangeSlide}
         ref={swiperRef}
       >
-        {tutorials.map((tutorial) => (
+        {tutorials.map((tutorial: TutorialProps) => (
           <SwiperSlide key={tutorial.id} className="swiper-no-swiping">
-            <h4 className={styles.tutorial_description}>{tutorial.desc}</h4>
+            <h4 className="tutorial-description">{tutorial.desc}</h4>
           </SwiperSlide>
         ))}
       </Swiper>

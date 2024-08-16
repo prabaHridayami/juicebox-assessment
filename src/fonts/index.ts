@@ -36,11 +36,6 @@ const graphik = localFont({
 const agrandir = localFont({
   src: [
     {
-      path: "./PP Agrandir/PPAgrandir-Medium.eot",
-      weight: "500",
-      style: "normal",
-    },
-    {
       path: "./PP Agrandir/PPAgrandir-Medium.ttf",
       weight: "500",
       style: "normal",

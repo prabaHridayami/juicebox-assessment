@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { firstNameSchema, emailSchema } from "@/lib/schemas";
 
 import { useRouter } from "next/navigation";
-import Input from "@/components/ui/input";
-import LottieAnimation from "@/components/shared/lottie-animation";
 import { useGlobalContext } from "@/contexts/GlobalContext";
-import { Previous } from "@/icons";
-import Button from "../ui/button";
 
-import styles from "@/styles/realitycheck.module.css";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { firstNameSchema, emailSchema } from "@/libs/schemas";
+
+import Input from "@/components/ui/input";
+import Button from "@/components/ui/button";
+import LottieAnimation from "@/components/shared/lottie-animation";
+import { Previous } from "@/icons";
 
 interface FormValues {
   firstName: string;
@@ -48,7 +48,7 @@ const RealityForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {step === 1 && (
-        <div className={styles.multiform_step}>
+        <div className="multiform-step">
           <LottieAnimation wrapperClassName="lottie-wrapper-sm" />
           <p>Let&apos;s start with the basics. Type in your first name.</p>
 
@@ -59,7 +59,7 @@ const RealityForm = () => {
             <Controller
               control={control}
               name="firstName"
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur, value } }: any) => (
                 <Input
                   onBlur={onBlur}
                   onChange={onChange}
@@ -82,7 +82,7 @@ const RealityForm = () => {
       )}
 
       {step === 2 && (
-        <div className={styles.multiform_step}>
+        <div className="multiform-step">
           <div>
             <LottieAnimation wrapperClassName="lottie-wrapper-sm" />
             <p>How should we contact you? Type in your email address.</p>
@@ -94,7 +94,7 @@ const RealityForm = () => {
             <Controller
               control={control}
               name="email"
-              render={({ field: { onChange, onBlur, value } }) => (
+              render={({ field: { onChange, onBlur, value } }: any) => (
                 <Input
                   placeholder="Email address"
                   onBlur={onBlur}

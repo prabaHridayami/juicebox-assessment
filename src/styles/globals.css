@@ -44,8 +44,9 @@ html,
 body {
   max-width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
+  background: var(--background-end);
 }
 
 body {
@@ -56,6 +57,7 @@ body {
     var(--background-start) 0%,
     var(--background-end) 50%
   );
+  background-repeat: no-repeat;
   color: var(--light);
   font-size: 1rem;
   font-family: var(--font-bagoss);
@@ -92,6 +94,7 @@ h4 {
 
 .container {
   margin: 0 20px;
+  height: 100vh;
 }
 
 /* Base button styles */
@@ -167,6 +170,10 @@ h4 {
 .btn-light:focus {
   background-color: var(--btn-bg-hover-light);
   box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.2);
+}
+
+.btn.hidden {
+  visibility: hidden;
 }
 
 /* Input variants */
@@ -248,6 +255,20 @@ input::placeholder {
   padding: 24px 0;
 }
 
+header {
+  font-family: var(--font-agrandir);
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--light);
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  padding: 0 20px;
+  letter-spacing: 0.02em;
+}
+
 .bottom-wrapper {
   position: absolute;
   bottom: 0;
@@ -257,7 +278,55 @@ input::placeholder {
   flex-grow: 1;
 }
 
+.muted {
+  color: var(--muted);
+}
+
+.highlight {
+  background: #fabbff;
+  background: linear-gradient(to right, #fabbff 0%, #b179ff 50%, #6dddff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.multiform-step {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.field_wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 24px 20px;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.tutorial-description {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.result-description {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 @media screen and (min-width: 390px) {
+  body {
+    max-width: 390px;
+    margin: 0 auto;
+  }
+
   .action-container {
     max-width: 350px;
     margin: auto;
@@ -269,3 +338,18 @@ input::placeholder {
     margin: 24px auto;
   }
 }
+/* 
+.loti-container {
+  height: 100vh;
+  width: 390px;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+
+.end-lottie {
+  position: absolute;
+  top: 100vh;
+  width: 100%;
+  height: 1px;
+} */
