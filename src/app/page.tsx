@@ -16,7 +16,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 // GSAP Register Plugin
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Home() {
+const Home = () => {
   const swiperRef = useRef<SwiperRef>(null);
   const walkthroughRef = useRef<HTMLElement>(null);
   const heroRef = useRef<HTMLElement>(null);
@@ -26,6 +26,7 @@ export default function Home() {
     useState<boolean>(false);
 
   const lenis = useLenis();
+
   const onContinue = (isLast: number) => {
     if (curStep === isLast) {
       setIsTurotialCompleted(true);
@@ -42,20 +43,21 @@ export default function Home() {
     if (element && lenis) {
       lenis.scrollTo(element, {
         duration: 0.5,
+        offset: -115,
         easing: (t: number) => t,
       });
     }
   };
 
   useEffect(() => {
-    if (heroRef.current && lenis) {
-      lenis.scrollTo(heroRef.current, {
+    if (heroRef.current) {
+      lenis?.scrollTo(heroRef.current, {
         duration: 0.5,
         offset: -115,
         easing: (t: number) => t,
       });
     }
-  }, [heroRef.current]);
+  }, [heroRef.current, lenis]);
 
   useLayoutEffect(() => {
     const heroCtx = gsap.context(() => {
@@ -130,4 +132,6 @@ export default function Home() {
       </section>
     </ReactLenis>
   );
-}
+};
+
+export default Home;

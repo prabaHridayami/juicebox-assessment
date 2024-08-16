@@ -21,10 +21,7 @@ const Header = () => {
       <Link href="/">
         <h1>juicebox</h1>
       </Link>
-      <Button
-        className="btn btn-ghost"
-        onClick={() => window.location.reload()}
-      >
+      <Button className="btn btn-ghost" onClick={() => router.push("/")}>
         <Refresh />
       </Button>
     </header>

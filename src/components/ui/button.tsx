@@ -1,6 +1,6 @@
 import React from "react";
 
-type ButtonProps = {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: () => void;
   className?: string;
   children: React.ReactNode;
@@ -8,30 +8,25 @@ type ButtonProps = {
   type?: "button" | "submit" | "reset";
   loading?: boolean;
   ariaLabel?: string;
-};
+}
 
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   onClick,
   className = "",
   children,
   disabled = false,
   type = "button",
-  loading = false,
-  ...rests
-}) => {
+  ...props
+}: ButtonProps) => {
   return (
     <button
       onClick={onClick}
       className={className}
       disabled={disabled}
       type={type}
-      {...rests}
+      {...props}
     >
-      {loading ? (
-        <span className="spinner" role="status" aria-hidden="true"></span>
-      ) : (
-        children
-      )}
+      {children}
     </button>
   );
 };
