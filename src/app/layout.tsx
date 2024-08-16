@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { bagoss, sohne, graphik, agrandir } from "@/fonts";
+import { bagoss, sohne, graphik, agrandir } from "./fonts";
 import "@/styles/globals.css";
 import "swiper/css";
 import "swiper/css/pagination";

@@ -1,8 +1,5 @@
 "use client";
 import LottieAnimation from "@/components/shared/lottie-animation";
-import Link from "next/link";
-
-import { ReactLenis, useLenis } from "lenis/react";
 
 import React, { useRef, useState } from "react";
 import { SwiperRef } from "swiper/react";
@@ -10,10 +7,11 @@ import { SwiperRef } from "swiper/react";
 import Walkthrough from "@/components/shared/walkthrough";
 import RealityForm from "@/components/forms/reality-form";
 import Button from "@/components/ui/button";
+import { useLenis, ReactLenis } from "@/libs/lenis";
 
 export default function Home() {
   const swiperRef = useRef<SwiperRef>(null);
-  const lenisRef = useRef<typeof ReactLenis>(null);
+  const lenis = useLenis();
   const [curStep, setCurStep] = useState<number>(0);
   const [isTutorialCompleted, setIsTurotialCompleted] =
     useState<boolean>(false);
@@ -28,17 +26,17 @@ export default function Home() {
   const onChangeSlide = (swiper: any) => {
     setCurStep(swiper.activeIndex);
   };
-  const { lenis }: { lenis: typeof ReactLenis } = useLenis();
 
   const handleClick = () => {
     const element = document.getElementById("walkthrough");
     if (element && lenis) {
       lenis.scrollTo(element, {
-        duration: 1.2,
+        duration: 0.5,
         easing: (t: number) => t,
       });
     }
   };
+
   return (
     <ReactLenis root>
       <section className="container">
@@ -54,7 +52,7 @@ export default function Home() {
           </Button>
         </div>
       </section>
-      <section id="walkthrough">
+      <section className="container" id="walkthrough">
         {isTutorialCompleted ? (
           <RealityForm />
         ) : (

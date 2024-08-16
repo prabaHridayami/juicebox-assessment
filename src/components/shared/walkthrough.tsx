@@ -66,7 +66,7 @@ const Walkthrough = (props: Props) => {
         ref={swiperRef}
       >
         {tutorials.map((tutorial: TutorialProps) => (
-          <SwiperSlide key={tutorial.id} className="swiper-no-swiping">
+          <SwiperSlide key={tutorial.id}>
             <h4 className="tutorial-description">{tutorial.desc}</h4>
           </SwiperSlide>
         ))}
