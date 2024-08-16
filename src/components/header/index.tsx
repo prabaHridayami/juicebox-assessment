@@ -15,13 +15,18 @@ const Header = () => {
         disabled={pathname === "/"}
         className={`btn btn-ghost ${pathname === "/" ? "hidden" : ""}`}
         onClick={() => router.back()}
+        aria-label="Previous"
       >
         <Previous />
       </Button>
       <Link href="/">
         <h1>juicebox</h1>
       </Link>
-      <Button className="btn btn-ghost" onClick={() => router.push("/")}>
+      <Button
+        className="btn btn-ghost"
+        onClick={() => router.push("/")}
+        aria-label="Refresh"
+      >
         <Refresh />
       </Button>
     </header>

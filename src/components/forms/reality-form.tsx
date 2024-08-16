@@ -71,6 +71,7 @@ const RealityForm = () => {
                       type="submit"
                       disabled={errors.firstName ? true : false}
                       className="btn btn-ghost"
+                      aria-label="Submit"
                     >
                       <Previous />
                     </Button>
@@ -107,6 +108,7 @@ const RealityForm = () => {
                       type="submit"
                       disabled={errors.email ? true : false}
                       className="btn btn-ghost"
+                      aria-label="Submit"
                     >
                       <Previous />
                     </Button>
